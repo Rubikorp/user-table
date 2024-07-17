@@ -15,7 +15,7 @@ git add -A
 git commit -m 'deploy'
 
 # Пуш в ветку gh-pages
-git push -f git@github.com:Rubikorp/user-table.git master:gh-pages
+git push -f git@github.com/Rubikorp/user-table.git master:gh-pages
 
 # Возврат в корневую директорию проекта
 cd -

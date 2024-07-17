@@ -3,7 +3,7 @@ import { compareFunctions } from './features/featuresSorted'
 import { fetchUsers, filterNameUsers } from './services/api'
 import { UserTable } from './components/UserTable'
 import { SearchBar } from './components/SearchBar'
-import './App.scss'
+import './App.css'
 
 const App = () => {
 	const [users, setUsers] = useState([])

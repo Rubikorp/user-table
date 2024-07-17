@@ -1,0 +1,32 @@
+.userTable {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+.userTable th,
+.userTable td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	position: relative;
+}
+
+.userTable th {
+	cursor: pointer;
+	background-color: #f2f2f2;
+	text-align: left;
+}
+
+.userTable th:hover {
+	background-color: #ddd;
+}
+
+.resizer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 5px;
+	height: 100%;
+	cursor: col-resize;
+	user-select: none;
+}

@@ -2,23 +2,21 @@
 	width: 100%;
 	border-collapse: collapse;
 	table-layout: fixed;
-}
+	th,
+	td {
+		border: 1px solid #ddd;
+		padding: 8px;
+		position: relative;
+	}
+	th {
+		cursor: pointer;
+		background-color: #f2f2f2;
+		text-align: left;
+	}
 
-.userTable th,
-.userTable td {
-	border: 1px solid #ddd;
-	padding: 8px;
-	position: relative;
-}
-
-.userTable th {
-	cursor: pointer;
-	background-color: #f2f2f2;
-	text-align: left;
-}
-
-.userTable th:hover {
-	background-color: #ddd;
+	th:hover {
+		background-color: #ddd;
+	}
 }
 
 .resizer {

@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import styled from './UserTable.module.scss'
-export const UserTable = ({ users, onSort, sortConfig }) => {
+
+export const UserTable = ({
+	users,
+	onSort,
+	sortConfig,
+	setCurrentUserModal,
+	setOpenModal,
+}) => {
 	const [columnWidths, setColumnWidths] = useState({
 		name: 150,
 		age: 100,
@@ -66,6 +73,11 @@ export const UserTable = ({ users, onSort, sortConfig }) => {
 		document.addEventListener('mouseup', handleMouseUp)
 	}
 
+	const openUser = user => {
+		setCurrentUserModal(user)
+		setOpenModal(true)
+	}
+
 	return (
 		<table className={styled.userTable}>
 			<thead>
@@ -114,7 +126,7 @@ export const UserTable = ({ users, onSort, sortConfig }) => {
 			</thead>
 			<tbody>
 				{users.map(user => (
-					<tr key={user.id}>
+					<tr key={user.id} onClick={() => openUser(user)}>
 						<td>{`${user.firstName} ${user.lastName}`}</td>
 						<td>{user.age}</td>
 						<td>{user.gender}</td>

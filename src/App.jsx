@@ -1,9 +1,10 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import './App.css'
+import { ModalUser } from './components/ModalUser'
+import { SearchBar } from './components/SearchBar'
+import { UserTable } from './components/UserTable'
 import { compareFunctions } from './features/featuresSorted'
 import { fetchUsers, filterNameUsers } from './services/api'
-import { UserTable } from './components/UserTable'
-import { SearchBar } from './components/SearchBar'
-import './App.css'
 
 const App = () => {
 	const [users, setUsers] = useState([])
@@ -11,6 +12,8 @@ const App = () => {
 	const [loading, setLoading] = useState(true)
 	const [sortConfig, setSortConfig] = useState(null)
 	const [checkUsers, setCheckUsers] = useState(false)
+	const [openModal, setOpenModal] = useState(false)
+	const [currentUserModal, setCurrentUserModal] = useState({})
 
 	const loadUsers = () => {
 		setLoading(true)
@@ -76,9 +79,20 @@ const App = () => {
 					users={sortedUsers}
 					onSort={handleSort}
 					sortConfig={sortConfig}
+					setCurrentUserModal={setCurrentUserModal}
+					setOpenModal={setOpenModal}
 				/>
 			) : (
 				<p>Пользователи не найдены</p>
+			)}
+			{openModal ? (
+				<ModalUser
+					user={currentUserModal}
+					setOpenModal={setOpenModal}
+					setCurrentUserModal={setCurrentUserModal}
+				/>
+			) : (
+				''
 			)}
 		</div>
 	)

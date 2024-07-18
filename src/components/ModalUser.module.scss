@@ -1,0 +1,42 @@
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.345);
+
+	display: flex;
+	justify-content: center;
+
+	animation: open 0.2s ease-in-out;
+}
+
+.container {
+	position: fixed;
+	top: 30vh;
+	padding: 20px;
+	border-radius: 10px;
+	background-color: aliceblue;
+
+	.list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.btn_container {
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+@keyframes open {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

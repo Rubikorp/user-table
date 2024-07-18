@@ -17,6 +17,13 @@
 	th:hover {
 		background-color: #ddd;
 	}
+
+	tr:hover {
+		background-color: whitesmoke;
+	}
+	tr {
+		cursor: pointer;
+	}
 }
 
 .resizer {
